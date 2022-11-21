@@ -4,7 +4,8 @@ import 'dart:convert';
 class APIService {
   static var client = http.Client();
 
-  static Future<UserLoginModel> userLoginApi(
+ // static Future<UserLoginModel> userLoginApi(
+  static Future<String> userLoginApi(
     String? username,
     String? password,
   ) async {
@@ -22,7 +23,17 @@ class APIService {
         "password": password,
       }),
     );
-
-    return userLoginModelFromJson(response.body);
+    print("response: ${response.body}");
+    print("response_status: ${response.statusCode}");
+    var data = jsonDecode(response.body);
+    int m = data['status'];
+    if (m == 400) {
+      print("response: $m");
+      return "failed";
+    //  return userLoginModelFromJson(data);
+    }else {
+      return "success";
+    //  return userLoginModelFromJson(response.body);
+    }
   }
 }

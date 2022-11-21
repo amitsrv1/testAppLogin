@@ -63,7 +63,7 @@ class _LoginDemoState extends State<LoginDemo> {
                       APIService.userLoginApi(userNameInputController.text,
                               passwordInputController.text)
                           .then((value) {
-                        if (value.status == 400) {
+                        if (value == "failed") {
                            print('failed');
                            Navigator.push(context,
                               MaterialPageRoute(builder: (_) => InvalidCredentials()));
