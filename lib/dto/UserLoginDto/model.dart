@@ -12,7 +12,7 @@ class UserLoginModel {
         data = json['data'] != null ? Data.fromJson(json['data']) : null;
     }
 
-    num? status;
+    int? status;
     String? message;
     Data? data;
 

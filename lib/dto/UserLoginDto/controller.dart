@@ -6,7 +6,7 @@ import 'package:testappforlogin/dto/UserLoginDto/storage.dart';
 
 class APIService {
   static var client = http.Client();
-  
+
   static Future<String> userLoginApi(
     String? username,
     String? password,
