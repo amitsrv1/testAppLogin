@@ -61,8 +61,7 @@ class _LoginDemoState extends State<LoginDemo> {
                   child: TextButton(
                     onPressed: () {
                       APIService.userLoginApi(userNameInputController.text,
-                              passwordInputController.text)
-                          .then((value) {
+                              passwordInputController.text).then((value) {
                         if (value == "failed") {
                            print('failed');
                            Navigator.push(context,
